@@ -7,7 +7,9 @@
 
 </head>
 <body>
-<!-- partial:index.partial.html -->
+
+<audio id="bgm" src="lagu.mp3" loop></audio>
+  
 <div class="container">
   <div class="night"></div>
   <div class="flowers">
@@ -444,7 +446,17 @@
         }
       }, 100);
     });
+
+   const music = document.getElementById("bgm");
+    
+      function playMusic() {
+        music.play();
+        document.removeEventListener("click", playMusic);
+      }
+    
+    document.addEventListener("click", playMusic);
   </script>
 
+    
 </body>
 </html>
